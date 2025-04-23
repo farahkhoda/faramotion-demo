@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FARAMOTION - Animation Demo</title>
+  <link rel="stylesheet" href="css-animation.css" />
+  <style>
+    body {
+      background: #0f172a;
+      color: #f1f5f9;
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      text-align: center;
+    }
+    h1 {
+      color: #38bdf8;
+      margin-bottom: 1rem;
+    }
+    .box {
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #1e293b;
+      border-radius: 8px;
+      width: 200px;
+    }
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      background: #38bdf8;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>FARAMOTION Animation Demo</h1>
+  <p>Click a button to test an animation:</p>
+
+  <div class="box" id="demoBox">Animate Me</div>
+
+  <div class="buttons">
+    <button onclick="runAnimation('fade-in')">Fade In</button>
+    <button onclick="runAnimation('rotate-in')">Rotate In</button>
+    <button onclick="runAnimation('bounce-in')">Bounce In</button>
+    <button onclick="runAnimation('flip-in-x')">Flip In X</button>
+    <button onclick="runAnimation('flip-in-y')">Flip In Y</button>
+    <button onclick="runAnimation('pulse')">Pulse</button>
+  </div>
+
+  <script>
+    function runAnimation(animation) {
+      const el = document.getElementById("demoBox");
+      el.className = "box"; // reset
+      void el.offsetWidth; // reflow trick
+      el.classList.add(animation);
+    }
+  </script>
+</body>
+</html>
